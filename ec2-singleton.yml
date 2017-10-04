@@ -1,0 +1,10 @@
+- name: EC2 Singleton, everything that every EC2 Instance should have
+  hosts: all
+  tasks:
+    # Install CloudWatch Metrics Script http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html
+    - name: "Install CloudWatch Mon Script prerequisites"
+      import_playbook: "{{ item }}.yml"
+      with_first_found:
+        - ./mon-deps/{{ ansible_distribution | lower }}.yml
+        - ./mon-deps/{{ ansible_os_family | lower }}.yml
+

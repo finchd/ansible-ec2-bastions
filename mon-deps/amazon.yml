@@ -1,0 +1,11 @@
+- name: "Installing CloudWatch Mon Script prereqs for Amazon Linux"
+  hosts: all
+  tasks:
+    - yum:
+      with_items:
+         - perl-Switch 
+         - perl-DateTime 
+         - perl-Sys-Syslog 
+         - perl-LWP-Protocol-https
+      become: true
+
