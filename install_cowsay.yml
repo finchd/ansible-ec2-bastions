@@ -1,0 +1,5 @@
+---
+- name: "Install cowsay"
+  package:
+    ensure: installed
+    name: cowsay
