@@ -4,5 +4,5 @@
   tasks:
     - name: "Install cowsay"
       package:
-        ensure: installed
+        state: installed
         name: cowsay
