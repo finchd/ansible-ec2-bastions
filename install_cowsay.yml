@@ -1,5 +1,8 @@
 ---
-- name: "Install cowsay"
-  package:
-    ensure: installed
-    name: cowsay
+- name: EC2 Singleton, everything that every EC2 Instance should have
+  hosts: all
+  tasks:
+    - name: "Install cowsay"
+      package:
+        ensure: installed
+        name: cowsay
